@@ -35,7 +35,9 @@ for j = 1:num_sub
  arrayName = ['ADHD_',num2str(subID),'fhpflpscrref'];
  
  % Load the array from the matlab file. 
- arrayData = load(matlabFile, arrayName);
+ arrayDataStruct = load(matlabFile, arrayName);
+ varName = fieldnames(arrayDataStruct);
+ arrayData = arrayDataStruct.(varName{1});
  
  % Calculate the total number of segments
  numSeg = size(arrayData,2);
@@ -73,7 +75,7 @@ for j = 1:num_sub
  end
  
  %inform the user how many of each segment type were detected as a check
- disp(['There were ', num2str(numSegClosed), ' eyes closed and ' num2str(numSegOpen), ' eyes open segments analyzed for subject ', num2str(subID), ' at a sampling rate of ', num2str(samplingRate), 'Hz']); 
+ disp(['There were ', num2str(numSegClosed), ' eyes closed and ' num2str(numSegOpen), ' eyes open segments analyzed for subject ', num2str(subID)]); 
  
    
  %make file names for the combined data

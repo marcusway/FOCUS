@@ -5,7 +5,8 @@ function write_with_headers(X, file, header_row, header_col, header_col_title)
         % The first entry of the row headers should either include the 
         % label for the column headers (i.e., 'subjectID') or an empty
         % string. This assumes that the header column is a cell array
-        % and 
+        % It's bizarre that Matlab doesn't have a pre-existing better
+        % version of this. 
         
         % Write the header column first
         nRows = size(X,1);

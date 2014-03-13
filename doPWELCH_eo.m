@@ -90,7 +90,7 @@ for j = 1:nargin
         mkdir(fullfile(subDir,matFolder),[subDir settings.AVG_PSD_FOLDER_SUFFIX]);
     end
     
-    if ~exist(fullfile(subDir,matFolder,[subDir settings.AVG_PSD_FOLDER_SUFFIX]), 'dir')
+    if ~exist(fullfile(subDir,txtFolder,[subDir settings.AVG_PSD_FOLDER_SUFFIX]), 'dir')
         mkdir(fullfile(subDir,txtFolder),[subDir settings.AVG_PSD_FOLDER_SUFFIX]);
     end
     

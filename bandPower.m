@@ -11,7 +11,7 @@ clc;
 
 %% Run it!
 load('settings')
-system(['python get_band_power.py "'...
+system(['/Users/sheridanlab/anaconda/bin/python get_band_power.py "'...
     settings.FILE_PREFIX settings.NORM_FREQ...
-    '*" all_subs_rel_pow.csv']);
+    '*" all_subs_band_pow.csv']);
 

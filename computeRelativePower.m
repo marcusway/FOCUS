@@ -47,7 +47,7 @@ f = 0:settings.SAMPLING_RATE/settings.NFFT:settings.SAMPLING_RATE/2;
 pow_range = f > settings.LOWER_LIM & f < settings.UPPER_LIM;
 
 %Make a list of all the subjects we want:
-subDir = dir('1*'); % all the subject directories start with a '1'
+subDir = dir('4*'); % all the subject directories start with a '1'
 subjects = cell(1, length(subDir));
 for i = 1:length(subDir)
     subjects{i} = subDir(i).name;

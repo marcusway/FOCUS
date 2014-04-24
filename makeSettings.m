@@ -47,6 +47,7 @@ settings.BANDS.BETA      = [12, 30];
 
 %% Naming Conventions
 settings.FILE_PREFIX       = 'ADHD_';
+settings.SUBMNUM_FIRST_DIGIT = '4';
 settings.IND_PSD_FOLDER_SUFFIX       = '_ind_electrode_psds';
 settings.AVG_PSD_FOLDER_SUFFIX = '_avg_psds';
 settings.MAT_FOLDER_SUFFIX = '_matfiles';

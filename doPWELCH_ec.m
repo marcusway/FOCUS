@@ -75,7 +75,7 @@ for j = 1:nargin
     end
     
     % Get the sampling rate from file
-    load(fullfile(subDir, matFolder, [settings.FILE_PREFIX, subDir, '.fhp.flp.s.cr.ref.mat']), 'samplingRate');
+    load(fullfile(subDir, matFolder, [settings.FILE_PREFIX, subDir, settings.MAT_FILE_EXTENSION]), 'samplingRate');
 
     
     % tell the user how many channels there are and the collection sampling

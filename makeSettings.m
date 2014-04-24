@@ -39,6 +39,9 @@ settings.NFFT            = 1024; % Size of the window for pwelch
 settings.WINDOW          = hanning(1024); % Type of window for pwelch
 settings.REGIONS         = {'LF','RF','LP','RP','O'};
 settings.CONDITIONS      = {'eo','ec'}; % eyes open and eyes closed
+
+% Define [lower, upper] frequency limits for 
+% frequency bands of interest
 settings.BANDS           = struct;
 settings.BANDS.DELTA     = [1, 4];
 settings.BANDS.THETA     = [5, 8];
@@ -46,14 +49,28 @@ settings.BANDS.ALPHA     = [8, 12];
 settings.BANDS.BETA      = [12, 30];
 
 %% Naming Conventions
-settings.FILE_PREFIX       = 'ADHD_';
-settings.SUBMNUM_FIRST_DIGIT = '4';
-settings.IND_PSD_FOLDER_SUFFIX       = '_ind_electrode_psds';
-settings.AVG_PSD_FOLDER_SUFFIX = '_avg_psds';
-settings.MAT_FOLDER_SUFFIX = '_matfiles';
-settings.TXT_FOLDER_SUFFIX = '_textfiles';
-settings.EEG_FOLDER_SUFFIX = '_eeglabfiles';
-settings.MAT_FILE_EXTENSION = '.fhp.flp.s.cr.ref.mat';
-settings.MAT_FILE_EXTENSION_NO_DOTS = 'fhpflpscrref';
+
+% Conventions for subject data files. ADHD_1054
+% would have settings.FILE_PREFIX = 'ADHD_' and 
+% settings.SUBNUM_FIRST_DIGIT = '4'. Make sure the first digit
+% is a string, not an integer. We're assuming that all subjects
+% for the given study follow these conventions. 
+settings.FILE_PREFIX                  = 'ADHD_';
+settings.SUBMNUM_FIRST_DIGIT          = '4'; % Used in computeRelativePower
+
+% These folder naming conventions should stay
+% the same across studies. 
+settings.IND_PSD_FOLDER_SUFFIX        = '_ind_electrode_psds';
+settings.AVG_PSD_FOLDER_SUFFIX        = '_avg_psds';
+settings.MAT_FOLDER_SUFFIX            = '_matfiles';
+settings.TXT_FOLDER_SUFFIX            = '_textfiles';
+settings.EEG_FOLDER_SUFFIX            = '_eeglabfiles';
+
+% It's possible for these extensions to change depending on 
+% how the files are pre-processed. The extensions here should match
+% the extension on the file produced by Net Station's export to Matlab
+% tool. 
+settings.MAT_FILE_EXTENSION           = '.fhp.flp.s.cr.ref.mat';
+settings.MAT_FILE_EXTENSION_NO_DOTS   = 'fhpflpscrref';
 settings.NORM_FREQ = 'norm_freq';
 save('settings')
